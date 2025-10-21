@@ -1,0 +1,345 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* VS Code Light Theme Colors */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.25 0 0);
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.25 0 0);
+  --popover: oklch(0.98 0 0);
+  --popover-foreground: oklch(0.25 0 0);
+  --primary: oklch(0.45 0.15 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.25 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.5 0.12 220);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.88 0 0);
+  --input: oklch(0.94 0 0);
+  --ring: oklch(0.45 0.15 250);
+  --chart-1: oklch(0.55 0.18 250);
+  --chart-2: oklch(0.6 0.15 200);
+  --chart-3: oklch(0.45 0.12 220);
+  --chart-4: oklch(0.65 0.2 180);
+  --chart-5: oklch(0.5 0.16 240);
+  --radius: 0.25rem;
+  --sidebar: oklch(0.96 0 0);
+  --sidebar-foreground: oklch(0.25 0 0);
+  --sidebar-primary: oklch(0.45 0.15 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.93 0 0);
+  --sidebar-accent-foreground: oklch(0.25 0 0);
+  --sidebar-border: oklch(0.88 0 0);
+  --sidebar-ring: oklch(0.45 0.15 250);
+}
+
+.dark {
+  /* VS Code Dark Theme Colors - matching VS Code's exact color scheme */
+  --background: #282a36;
+  --foreground: #f8f8f2;
+  --card: #44475a;
+  --card-foreground: #f8f8f2;
+  --popover: #44475a;
+  --popover-foreground: #f8f8f2;
+  --primary: #bd93f9;
+  --primary-foreground: #282a36;
+  --secondary: #6272a4;
+  --secondary-foreground: #f8f8f2;
+  --muted: #44475a;
+  --muted-foreground: #6272a4;
+  --accent: #50fa7b;
+  --accent-foreground: #282a36;
+  --destructive: #ff5555;
+  --destructive-foreground: #f8f8f2;
+  --border: #6272a4;
+  --input: #44475a;
+  --ring: #bd93f9;
+  --chart-1: #8be9fd;
+  --chart-2: #50fa7b;
+  --chart-3: #ffb86c;
+  --chart-4: #ff79c6;
+  --chart-5: #bd93f9;
+  --radius: 0.25rem;
+  --sidebar: #21222c;
+  --sidebar-foreground: #f8f8f2;
+  --sidebar-primary: #bd93f9;
+  --sidebar-primary-foreground: #282a36;
+  --sidebar-accent: #44475a;
+  --sidebar-accent-foreground: #f8f8f2;
+  --sidebar-border: #6272a4;
+  --sidebar-ring: #bd93f9;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Updated gradient for VS Code theme */
+.dp-auto-gradient {
+  background: linear-gradient(135deg, #282a36 0%, #44475a 50%, #6272a4 100%);
+}
+
+.dp-auto-accent-gradient {
+  background: linear-gradient(135deg, #bd93f9 0%, #ff79c6 100%);
+}
+
+/* Added custom gradient for DP-Auto branding */
+/* ... existing code here ... */
+
+/* Added modern AI code review style with backdrop-filter effects */
+.aiCodeReviews {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.messageBox {
+  position: absolute;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 9.49px;
+  box-sizing: border-box;
+}
+
+.messageBoxBackground {
+  width: 316.28px;
+  height: 120px;
+  backdrop-filter: blur(16px);
+  opacity: 0.6;
+  border: 0.79px solid hsl(var(--border));
+  background: linear-gradient(180deg, hsl(var(--card)) 0%, transparent 100%);
+  left: 50%;
+  top: 50%;
+  transform: translate(calc(-50% + 11.86px), calc(-50% - 7.3px));
+}
+
+.messageBoxMain {
+  width: 340px;
+  height: 221.40px;
+  backdrop-filter: blur(16px);
+  border: 1px solid hsl(var(--border));
+  background: linear-gradient(180deg, hsl(var(--card) / 0.9) 0%, hsl(var(--card) / 0.7) 100%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.codeBlock {
+  white-space: pre-wrap;
+  word-break: break-words;
+  font-size: 10.28px;
+  font-family: "Geist Mono", monospace;
+  line-height: 15.81px;
+  color: hsl(var(--foreground));
+  width: 100%;
+  flex-grow: 1;
+}
+
+.codeBlock p {
+  margin: 0;
+}
+
+.highlight {
+  position: absolute;
+  left: -8.64px;
+  width: 339.20px;
+}
+
+.highlightHeader {
+  height: 45.47px;
+  top: 80.79px;
+  background: hsl(var(--primary) / 0.1);
+}
+
+.highlightMain {
+  height: 33.12px;
+  top: 47.67px;
+  background: hsl(var(--accent) / 0.2);
+}
+
+.applyButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3.95px;
+  padding: 3.16px 6.33px;
+  border-radius: 5.53px;
+  box-shadow: 0px 0.7906976938247681px 2.3720932006835938px rgba(0, 0, 0, 0.1);
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-size: 10.28px;
+  line-height: 15.81px;
+  font-weight: 500;
+  margin-top: auto;
+  margin-left: auto;
+  cursor: pointer;
+  border: none;
+}
+
+.buttonText {
+  font-family: "Geist", sans-serif;
+}
+
+.buttonShortcut {
+  font-family: "SF Pro", sans-serif;
+}
+
+/* Added glass morphism effects for chat messages */
+.glass-message {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, hsl(var(--card) / 0.95) 0%, hsl(var(--card) / 0.85) 100%);
+  border: 1px solid hsl(var(--border) / 0.6);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.glass-sidebar {
+  backdrop-filter: blur(20px);
+  background: linear-gradient(180deg, hsl(var(--sidebar) / 0.98) 0%, hsl(var(--sidebar) / 0.95) 100%);
+  border-right: 1px solid hsl(var(--sidebar-border) / 0.6);
+}
+
+.glass-card {
+  backdrop-filter: blur(12px);
+  background: linear-gradient(180deg, hsl(var(--sidebar-accent) / 0.9) 0%, hsl(var(--sidebar-accent) / 0.8) 100%);
+  border: 1px solid hsl(var(--sidebar-border) / 0.4);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.glass-input {
+  backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, hsl(var(--background) / 0.95) 0%, hsl(var(--background) / 0.9) 100%);
+  border: 1px solid hsl(var(--border) / 0.6);
+}
+
+/* Theme specific styles for code block text color */
+.aiCodeReviews[data-theme="dark"] .messageBoxBackground .codeBlock p {
+  color: hsl(var(--muted-foreground));
+}
+
+.aiCodeReviews[data-theme="dark"] .messageBoxMain .codeBlock p {
+  color: hsl(var(--foreground));
+}
+
+/* Specific stroke color for the SVG path */
+.aiCodeReviews[data-theme="dark"] .codeBlock svg path {
+  stroke: #22c55e;
+}
+
+/* Enhanced floating animation for modern feel */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Improved gradient overlays with lighter tones */
+.modern-gradient-overlay {
+  background: linear-gradient(135deg, hsl(var(--primary) / 0.15) 0%, hsl(var(--accent) / 0.08) 50%, transparent 100%);
+}
+
+/* VS Code style vertical separator */
+.vscode-separator {
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    var(--sidebar-border) 10%,
+    var(--sidebar-border) 90%,
+    transparent 100%
+  );
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Input area at bottom with proper backdrop */
+.input-area-bottom {
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(180deg, transparent 0%, var(--background) 20%, var(--background) 100%);
+  border-top: 1px solid var(--border);
+}
+
+/* Added proper scrollable chat container */
+.chat-messages-container {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Added padding to messages to prevent overlap with sticky input */
+.messages-wrapper {
+  padding-bottom: 200px;
+}
