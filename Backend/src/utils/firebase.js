@@ -3,7 +3,8 @@ const { getFirestore } = require('firebase-admin/firestore');
 const path = require('path');
 
 // ✅ OPTION RECOMMANDÉE : Utiliser le fichier JSON directement
-const serviceAccount = require('../../config/firebase-service-account.json');
+//const serviceAccount = require('../../config/firebase-service-account.json');
+const serviceAccount = require("/etc/secrets/firebase-service-account.json");
 
 
 const app = initializeApp({
