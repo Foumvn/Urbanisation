@@ -86,6 +86,9 @@ app.use((req, res) => {
     error: 'Route non trouvée'
   });
 });
+app.get('/', (req, res) => {
+  res.json({ success: true, message: "API Urbanisation backend opérationnelle 🚀" });
+});
 
 app.listen(PORT, () => {
   console.log('');
