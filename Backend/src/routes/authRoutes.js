@@ -16,7 +16,7 @@ router.post('/signup', validateSignup, async (req, res) => {
       success: true,
       message: 'Utilisateur créé avec succès. Un code de vérification a été envoyé à votre email.',
       data: result.user
-    });
+    }); 
   } catch (error) {
     res.status(400).json({
       success: false,
