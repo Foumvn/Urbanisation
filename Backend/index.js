@@ -58,7 +58,10 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/auth', authRoutes);
+console.log('✅ Routes auth chargées');
+
 app.use('/api/chat', chatRoutes);
+console.log('✅ Routes auth chargées');
 
 // Route de santé
 app.get('/health', (req, res) => {
